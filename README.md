@@ -1,6 +1,8 @@
 ### Escuela Colombiana de Ingeniería
 ### Arquiecturas de Software
 
+### **Integrantes: Angie Natalia Mojica - Daniel Antonio Santanilla**
+
 ## Construción de un cliente 'grueso' con un API REST, HTML5, Javascript y CSS3. Parte I.
 
 ### Trabajo individual o en parejas. A quienes tuvieron malos resultados en el parcial anterior se les recomienda hacerlo individualmente.
@@ -15,27 +17,32 @@
 ## Ajustes Backend
 
 1. Trabaje sobre la base del proyecto anterior (en el que se hizo el API REST).
+
+    Se han agregado las bases del laboratorio anterior "LAB05"
+
 2. Incluya dentro de las dependencias de Maven los 'webjars' de jQuery y Bootstrap (esto permite tener localmente dichas librerías de JavaScript al momento de construír el proyecto):
 
     ```xml
     <dependency>
         <groupId>org.webjars</groupId>
         <artifactId>webjars-locator</artifactId>
+        <version>0.47</version>
     </dependency>
 
     <dependency>
         <groupId>org.webjars</groupId>
         <artifactId>bootstrap</artifactId>
-        <version>3.3.7</version>
+        <version>5.3.2</version>
     </dependency>
 
     <dependency>
         <groupId>org.webjars</groupId>
         <artifactId>jquery</artifactId>
-        <version>3.1.0</version>
+        <version>3.7.1</version>
     </dependency>                
-
     ```
+
+    Se han agregado las dependencias de webjars en el archivo pom.xml y se cambiaron las versiones de las dependencias de bootstrap y jquery.
 
 ## Front-End - Vistas
 
@@ -45,9 +52,10 @@
     src/main/resources/static
     ```
 
-4. Cree, en el directorio anterior, la página index.html, sólo con lo básico: título, campo para la captura del autor, botón de 'Get blueprints', campo <div> donde se mostrará el nombre del autor seleccionado, [la tabla HTML](https://www.w3schools.com/html/html_tables.asp) donde se mostrará el listado de planos (con sólo los encabezados), y un campo <div> donde se mostrará el total de puntos de los planos del autor. Recuerde asociarle identificadores a dichos componentes para facilitar su búsqueda mediante selectores.
+4. Cree, en el directorio anterior, la página index.html, sólo con lo básico: título, campo para la captura del autor, botón de 'Get blueprints', campo `<div>` donde se mostrará el nombre del autor seleccionado, [la tabla HTML](https://www.w3schools.com/html/html_tables.asp) donde se mostrará el listado de planos (con sólo los encabezados), y un campo `<div>` donde se mostrará el total de puntos de los planos del autor. Recuerde asociarle identificadores a dichos componentes para facilitar su búsqueda mediante selectores.
 
-5. En el elemento \<head\> de la página, agregue las referencia a las librerías de jQuery, Bootstrap y a la hoja de estilos de Bootstrap. 
+5. En el elemento `<head>` de la página, agregue las referencia a las librerías de jQuery, Bootstrap y a la hoja de estilos de Bootstrap.
+
     ```html
     <head>
         <title>Blueprints</title>
@@ -55,19 +63,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <script src="/webjars/jquery/jquery.min.js"></script>
-        <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet"
-          href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="/webjars/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" />
     </head>
     ```
 
+    Se agregaron las referencias a las librerías de jQuery, Bootstrap y a la hoja de estilos de Bootstrap.
 
-5. Suba la aplicación (mvn spring-boot:run), y rectifique:
+6. Suba la aplicación (mvn spring-boot:run), y rectifique:
     1. Que la página sea accesible desde:
-    ```
-    http://localhost:8080/index.html
-    ```
+   
+        ```bash
+        http://localhost:8080/index.html
+        ```
+
     2. Al abrir la consola de desarrollador del navegador, NO deben aparecer mensajes de error 404 (es decir, que las librerías de JavaScript se cargaron correctamente).
+
+        ![primeraconsultaindex](./img/primeraconsultaindex.png)
 
 ## Front-End - Lógica
 
