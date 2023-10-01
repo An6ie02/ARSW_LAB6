@@ -8,9 +8,6 @@ import edu.eci.arsw.blueprints.persistence.impl.RedundancyBlueprintFilter;
 
 import static org.junit.Assert.*;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * 
  * @author Angie Mojica
